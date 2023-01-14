@@ -13,28 +13,28 @@ import PasswordRecovery from '@pages/PasswordRecovery';
 import SendEmail from '@pages/SendEmail';
 import '@styles/global.css';
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const App = () => {
 	const initialState = useInitialState();
 	return (
 		<AppContext.Provider value={initialState}>
-			<HashRouter>
+			<BrowserRouter>
 				<Layout>
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="#/login" component={Login} />
-						<Route exact path="#/password-recovery" component={PasswordRecovery} />
-						<Route exact path="#/send-email" component={SendEmail} />
-						<Route exact path="#/new-password" component={NewPassword} />
-						<Route exact path="#/account" component={MyAccount} />
-						<Route exact path="#/signup" component={CreateAccount} />
-						<Route exact path="#/checkout" component={Checkout} />
-						<Route exact path="#/orders" component={Orders} />
+						<Route exact path="/login" component={Login} />
+						<Route exact path="/password-recovery" component={PasswordRecovery} />
+						<Route exact path="/send-email" component={SendEmail} />
+						<Route exact path="/new-password" component={NewPassword} />
+						<Route exact path="/account" component={MyAccount} />
+						<Route exact path="/signup" component={CreateAccount} />
+						<Route exact path="/checkout" component={Checkout} />
+						<Route exact path="/orders" component={Orders} />
 						<Route path="*" component={NotFound} />
 					</Switch>
 				</Layout>
-			</HashRouter>
+			</BrowserRouter>
 		</AppContext.Provider>
 	);
 }
